@@ -1,11 +1,13 @@
 (function(window) {
-  'use strict';
-  var FORM_SELECTOR = '[data-payment-info="form"]';
+  "use strict";
+  var PAYMENT_POPUP = "[data-payment-thank='popup']";
+  var FORM_SELECTOR = "[data-payment-info='form']";
   var App = window.App;
-  var FormHandler = App.FormHandler;
+  var PaymentHandler = App.PaymentHandler;
 
-  var formHandler = new FormHandler(FORM_SELECTOR);
-  formHandler.addSubmitHandler();
+  var formHandler = new PaymentHandler(FORM_SELECTOR);
+  /*  var paymenthandler = new PaymentHandler(PAYMENT_POPUP);*/
+  formHandler.addSubmitHandler(PAYMENT_POPUP);
   //console.log(formHandler);
 
 })(window);
